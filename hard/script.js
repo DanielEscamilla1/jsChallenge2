@@ -1,11 +1,24 @@
+function getBMI(mass, height) {
+    return mass / height ** 2;
+  }
+
 let tom = {
-    mass: "8 g",
-    height: "9in"
-}
+    mass: "8",
+    height: "9",
+    BMI: function () {
+        return getBMI(tom.mass, tom.height);
+      },
+    };
+
 
 let jerry = {
-    mass: "45 g",
-    height: "10in"
-}
+    mass: "45",
+    height: "10",
+    BMI: function () {
+        return getBMI(jerry.mass, jerry.height);
+      },
+    };
 
-let BMI = mass / height ^2 === mass / (height * height)
+let tomHigherBMI = tom.BMI() > jerry.BMI();
+
+console.log(`Is tom’s BMI higher than jerry’s? ${tomHigherBMI}`);
